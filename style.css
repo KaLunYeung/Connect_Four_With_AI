@@ -2,11 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
   }
   
   body {
     align-items: center;
-    background: white;
+    background: lightblue;
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
@@ -37,7 +38,7 @@
   }
   
   .cell::after {
-    background: white;
+    background:lightblue;
     border-radius: 50%;
     border: 3px solid black;
     content: '';
@@ -62,7 +63,7 @@
   }
   
   .cell.row-top {
-    background: white;
+    background: lightblue;
   }
   
   .cell.row-top::after {
