@@ -88,7 +88,7 @@ const checkWinningCells = (cells) => {
   for (const cell of cells) {
     cell.classList.add('win');
   }
-  statusSpan.textContent = `${yellowIsNext ? 'Yellow' : 'Red'} has won!`
+  statusSpan.textContent = `${yellowIsNext ? 'PLAYER' : 'AI'} has won!`
   return true;
 };
 
@@ -334,8 +334,8 @@ function miniMax(depth, maximizingPlayer) {
   var is_terminal = is_terminal_node(allCells,'red') || is_terminal_node(allCells,'yellow') || valid_location.length == 0;
 
   if (depth == 0 || is_terminal){
-    if ( is_terminal_node(allCells,'red')) return [null,100000000000];
-    else if (is_terminal_node(allCells,'yellow')) return [null, -100000000000];
+    if ( is_terminal_node(allCells,'red')) return [null,Number.POSITIVE_INFINITY];
+    else if (is_terminal_node(allCells,'yellow')) return [null, Number.NEGATIVE_INFINITY];
     else if (valid_location.length == 0) return [null,0];
     else return [null,score_position(allCells)];
 
