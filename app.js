@@ -405,9 +405,9 @@ function is_terminal_node(board,color){
   var k = 7;
   var n = 0;
   
-  for (i = 0; i<6 ;i++){
+  for (var i = 0; i<6 ;i++){
     
-    for (j = 0; j<4 ;j++){
+    for (var j = 0; j<4 ;j++){
       if ( getColorOfCell(board[(j + k*n)]) == color && getColorOfCell(board[(j + k*n)+1]) == color && getColorOfCell(board[(j + k*n)+2]) == color && getColorOfCell(board[(j + k*n)+3]) == color )
       {
         return true;}
@@ -416,7 +416,7 @@ function is_terminal_node(board,color){
   }
 
   //vertical
-  for (i = 21; i<42 ;i++){
+  for (var i = 21; i<42 ;i++){
     if ( getColorOfCell(board[i]) == color && getColorOfCell(board[i-7]) == color && getColorOfCell(board[i-14]) == color && getColorOfCell(board[i-21]) == color )
     {
       
@@ -425,7 +425,7 @@ function is_terminal_node(board,color){
 
   }
 
-  // horizontal / 
+  // diagonal / 
   var positive_horizontal_to_check = [21,28,22,35,29,23,36,30,24,37,31,38];
   
 
@@ -443,7 +443,7 @@ function is_terminal_node(board,color){
   
 
   }
-  // horizontal \ 
+  // diagonal \ 
 
   var negative_horizontal_to_check = [27,34,26,41,33,25,40,32,24,39,31,38];
   
